@@ -1,0 +1,378 @@
+
+//1. Reverse a String 
+
+ 
+ function rev(s) {
+  let r = '';
+  for (let i = s.length - 1; i >= 0; i--) {
+    r += s[i];
+  }
+  return r;
+}
+
+
+console.log(rev("sameer")); 
+
+
+
+
+//2. Find the Largest Number 
+
+function Largest(arr) {
+  let l = arr[0]; 
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > l) {
+      l = arr[i];
+    }
+  }
+  return l;
+}
+
+
+console.log(Largest([1, 3, 2]));
+
+
+
+
+
+
+//3 count vol
+
+function countV(str) {
+  let vowels = 'aeiouAEIOU';
+  let count = 0;
+  
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  
+  return count;
+}
+
+
+console.log(countV("hello")); 
+
+
+
+
+
+//4 sum arr
+
+function sumArray(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+
+console.log(sumArray([6, 2, 3])); // Output: 6
+
+
+
+
+
+
+//5 remove duplicate
+
+
+
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
+
+
+console.log(removeDuplicates([1, 2, 2, 3])); 
+
+
+
+//6
+
+
+function findLongestWord(sentence) {
+  let words = sentence.split(' ');  
+  let longest = words[0];  
+  for (let i = 1; i < words.length; i++) {
+    if (words[i].length > longest.length) {
+      longest = words[i];
+    }
+  }
+
+  return longest;
+}
+
+
+console.log(findLongestWord("The sameer merat sd"));
+
+
+
+
+
+//7
+
+function countChar(str) {
+  let Count = {};
+
+  for (let char of str) {
+    if (Count[char]) {
+      Count[char]++;
+    } else {
+      Count[char] = 1;
+    }
+  }
+
+  return Count;
+}
+
+
+console.log(countChar("hello")); 
+
+
+
+
+
+
+
+
+//8
+
+function randomNum() {
+  return Math.floor(Math.random() * 10+1) ;
+}
+
+
+console.log(randomNum()); 
+
+
+
+
+//9
+
+function findDup(arr) {
+  const see = new Set();       
+  const d = new Set(); 
+
+  for (let num of arr) {
+    if (see.has(num)) {
+      d.add(num); 
+    } else { 
+      see.add(num); 
+    }
+  }
+
+  return Array.from(d); 
+}
+
+
+console.log(findDup([1, 2, 2, 3, 4, 4])); 
+
+
+
+
+//10
+
+function reverseWords(str) {
+  return str.split(' ').reverse().join(' ');
+}
+
+console.log(reverseWords("Hello world")); 
+
+
+
+
+//### Question 1: 
+//What will be the output of this code? 
+let arr = [1, 2, 3]; 
+arr.forEach((num) => { 
+arr.push(num * 2); 
+}); 
+console.log(arr.length);
+
+
+//ans B 6
+
+
+// ### Question 2: 
+// What will be logged to the console? 
+const multiply = (a) => (b) => a * b; 
+const double = multiply(2); 
+console.log(double(3));
+
+
+//ans  5
+
+
+
+
+
+
+ 
+// ### Question 3: 
+// What will be the output of this code? 
+let count = 0; 
+const timer = setInterval(() => { 
+count++; 
+if (count === 3) clearInterval(timer); 
+}, 1000); 
+setTimeout(() => console.log(count), 3100);
+
+
+//ans 3
+
+
+ 
+// ### Question 4: 
+// What will be the result of this code? 
+const numbers = [1, 2, 3, 4]; 
+const result = numbers.map((num) => num * 2).filter((num) => num > 5); 
+console.log(result); 
+
+
+// b [6,8]
+
+
+
+
+// ### Question 5: 
+// What will this code output? 
+let x = 1; 
+setTimeout(() => { 
+console.log(x); 
+}, 0); 
+x++; 
+
+
+//ans b 2
+
+
+
+
+
+// ### Question 6: 
+// What will be logged to the console? 
+const data = [1, 2, 3]; 
+const result = data.map((n) => { 
+return n + 1; 
+}).filter((n) => n > 2); 
+console.log(result);
+
+
+//b [3,4]
+
+
+
+
+
+
+
+// ### Question 7: 
+// What will be the output of this code? 
+function outer() { 
+let count = 0; 
+return function inner() { 
+count++; 
+return count; 
+}; 
+} 
+const increment = outer(); 
+console.log(increment()); 
+console.log(increment()); 
+
+
+//ans c 1, 2 
+
+
+
+
+
+// ### Question 8: 
+// What will be logged to the console? 
+const numbers = [1, 2, 3, 4]; 
+const sum = numbers.reduce((acc, num) => acc + num, 0); 
+console.log(sum);
+
+
+//ans b 10
+
+
+
+
+
+ 
+// ### Question 9: 
+// What will be the output of this code? 
+let arr = []; 
+for (let i = 0; i < 3; i++) { 
+arr[i] = function() { 
+console.log(i); 
+}; 
+} 
+arr[0](); 
+arr[1](); 
+arr[2](); 
+
+
+//ans a 0,1,2
+
+
+
+// ### Question 10: 
+// What will this code output? 
+const nums = [1, 2, 3]; 
+const double = nums.map((num) => { 
+return num * 2; 
+}).reduce((acc, num) => acc + num); 
+console.log(double); 
+
+
+//ans b 12
+
+
+
+
+
+// ### Question 11: 
+// What will be the output of the following code? 
+let count = 0; 
+const timer = setTimeout(() => { 
+console.log(count); 
+}, 1000); 
+count++;
+
+//ans a 1
+
+
+
+
+//12  B) [2, 6]
+
+
+// ### Question 13: 
+// What will be the output of this code? 
+const values = [1, 2, 3]; 
+const logValues = () => values.forEach((value) => { 
+setTimeout(() => { 
+console.log(value); 
+}, 1000); 
+}); 
+logValues();
+
+
+//ans 1 2 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
